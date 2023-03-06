@@ -1,0 +1,402 @@
+@prefix : <urn:absolute:air-traffic_swrl-test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <urn:absolute:air-traffic_swrl-test> .<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+<http://example.com/air_traffic_0000038> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasFlightRouteElement"@en .
+<http://example.com/air_traffic_0000039> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasTrajectoryPoint"@en .
+<http://example.com/air_traffic_0000040> rdf:type owl:ObjectProperty ;
+                                         rdfs:range <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "hasTime"@en .
+<http://example.com/air_traffic_0000041> rdf:type owl:ObjectProperty ;
+                                         rdfs:range <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "hasRoutePoint"@en .
+<http://example.com/air_traffic_0000042> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasForcast"@en .
+<http://example.com/air_traffic_0000043> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasAffectedArea"@en .
+<http://example.com/air_traffic_0000044> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://example.com/air_traffic_0000002> ;
+                                         rdfs:range <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "TemporalConflict"@en .
+<http://example.com/air_traffic_0000045> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "SpatialConflict"@en .
+<http://example.com/air_traffic_0000046> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "conflictWith"@en .
+<http://example.com/air_traffic_0000047> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasHeight"@en .
+<http://example.com/air_traffic_0000048> rdf:type owl:ObjectProperty ;
+                                         rdfs:label "hasSpeed"@en .
+<http://example.com/air_traffic_0000084> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://example.com/air_traffic_0000045> ;
+                                         rdfs:label "NTPP"@en .
+
+
+<http://example.com/air_traffic_0000008> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://example.com/air_traffic_0000040> ;
+                                                           owl:someValuesFrom <http://example.com/air_traffic_0000002>
+                                                         ] ;
+                                          rdfs:label "RelatedWeatherSystem"@en .
+
+<http://example.com/air_traffic_0000001> rdf:type owl:Class ;
+                                         rdfs:label "Space"@en .
+<http://example.com/air_traffic_0000002> rdf:type owl:Class ;
+                                         rdfs:label "Time"@en .
+<http://example.com/air_traffic_0000003> rdf:type owl:Class ;
+                                         rdfs:label "Thunderstorm"@en .
+<http://example.com/air_traffic_0000004> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "PrecipitationIntensity"@en .
+<http://example.com/air_traffic_0000005> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "mainPhenomenon"@en .
+<http://example.com/air_traffic_0000006> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "directionofMotion"@en .
+<http://example.com/air_traffic_0000007> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "EchoIntensity"@en .
+<http://example.com/air_traffic_0000009> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "ThunderstormID"@en .
+<http://example.com/air_traffic_0000010> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "IntensityofmainPhenomenon"@en .
+<http://example.com/air_traffic_0000011> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "weatherEnvironment"@en .
+<http://example.com/air_traffic_0000012> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "mainSystemcenter"@en .
+<http://example.com/air_traffic_0000013> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "speedOfMotion"@en .
+<http://example.com/air_traffic_0000014> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "intensityChange"@en .
+<http://example.com/air_traffic_0000015> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "mainSystem"@en .
+<http://example.com/air_traffic_0000016> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "mainSystemCoverageAnalysis"@en .
+<http://example.com/air_traffic_0000017> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000003> ;
+                                         rdfs:label "numberOfStormCell"@en .
+<http://example.com/air_traffic_0000018> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000001> ;
+                                         rdfs:label "GeoPosition"@en .
+<http://example.com/air_traffic_0000019> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000026> ;
+                                         rdfs:label "routeDesignatortoNextElement"@en .
+<http://example.com/air_traffic_0000020> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000019> ;
+                                         rdfs:label "otherRouteDesignator"@en .
+<http://example.com/air_traffic_0000021> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000019> ;
+                                         rdfs:label "routeDesignator"@en .
+<http://example.com/air_traffic_0000022> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000019> ;
+                                         rdfs:label "standardInstrumentArrival"@en .
+<http://example.com/air_traffic_0000023> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000019> ;
+                                         rdfs:label "standardInstrumentDeparture"@en .
+<http://example.com/air_traffic_0000025> rdf:type owl:Class ;
+                                         rdfs:label "FlightInformation"@en .
+<http://example.com/air_traffic_0000026> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000025> ;
+                                         rdfs:label "RouteTrajectory"@en .
+<http://example.com/air_traffic_0000027> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000026> ;
+                                         rdfs:label "PerformanceProfile"@en .
+<http://example.com/air_traffic_0000028> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000026> ;
+                                         rdfs:label "SpeedSchedule"@en .
+<http://example.com/air_traffic_0000029> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000026> ;
+                                         rdfs:label "FlightRouteElement"@en .
+<http://example.com/air_traffic_0000030> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "FlightRules"@en .
+<http://example.com/air_traffic_0000031> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "AbstractRouteChange"@en .
+<http://example.com/air_traffic_0000032> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "AbstractConstraint"@en .
+<http://example.com/air_traffic_0000033> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "EnRouteDelay"@en .
+<http://example.com/air_traffic_0000034> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "RouteTruncationIndicator"@en .
+<http://example.com/air_traffic_0000035> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "4TrajectoryPointID"@en .
+<http://example.com/air_traffic_0000036> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "ModifiedRouteIndicator"@en .
+<http://example.com/air_traffic_0000037> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://example.com/air_traffic_0000029> ;
+                                         rdfs:label "RouteDesignatorToNextElement"@en .
+
+<http://example.com/air_traffic_0000049> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "900km/h"@en .
+<http://example.com/air_traffic_0000050> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "8900m"@en .
+<http://example.com/air_traffic_0000051> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000081> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000068> ;
+                                         <http://example.com/air_traffic_0000047> <http://example.com/air_traffic_0000050> ;
+                                         <http://example.com/air_traffic_0000048> <http://example.com/air_traffic_0000049> ;
+                                         rdfs:label "4DTrajectoryPoint6"@en .
+<http://example.com/air_traffic_0000052> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000080> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000067> ;
+                                         rdfs:label "4DTrajectoryPoint5"@en .
+<http://example.com/air_traffic_0000053> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000079> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000066> ;
+                                         rdfs:label "4DTrajectoryPoint4"@en .
+<http://example.com/air_traffic_0000054> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000078> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000065> ;
+                                         rdfs:label "4DTrajectoryPoint3"@en .
+<http://example.com/air_traffic_0000056> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000064> ;
+                                         rdfs:label "4DTrajectoryPoint2"@en .
+<http://example.com/air_traffic_0000057> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000076> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000063> ;
+                                         rdfs:label "4DTrajectoryPoint1"@en .
+<http://example.com/air_traffic_0000058> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000082> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000069> ;
+                                         rdfs:label "4DTrajectoryPoint7"@en .
+<http://example.com/air_traffic_0000059> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000035> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000083> ;
+                                         <http://example.com/air_traffic_0000041> <http://example.com/air_traffic_0000070> ;
+                                         rdfs:label "4DTrajectoryPoint8"@en .
+<http://example.com/air_traffic_0000060> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000026> ;
+                                         <http://example.com/air_traffic_0000038> <http://example.com/air_traffic_0000061> ;
+                                         rdfs:label "Trajectory1"@en .
+<http://example.com/air_traffic_0000061> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000029> ;
+                                         <http://example.com/air_traffic_0000039> <http://example.com/air_traffic_0000051> ,
+                                                                                  <http://example.com/air_traffic_0000052> ,
+                                                                                  <http://example.com/air_traffic_0000053> ,
+                                                                                  <http://example.com/air_traffic_0000054> ,
+                                                                                  <http://example.com/air_traffic_0000056> ,
+                                                                                  <http://example.com/air_traffic_0000057> ,
+                                                                                  <http://example.com/air_traffic_0000058> ,
+                                                                                  <http://example.com/air_traffic_0000059> ;
+                                         rdfs:label "FlightElement1"@en .
+<http://example.com/air_traffic_0000062> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "CA1518"@en .
+<http://example.com/air_traffic_0000063> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "PD065"@en .
+<http://example.com/air_traffic_0000064> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000077> ;
+                                         rdfs:label "PIKAS"@en .
+<http://example.com/air_traffic_0000065> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "UNTAN"@en .
+<http://example.com/air_traffic_0000066> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "PIMQL"@en .
+<http://example.com/air_traffic_0000067> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "OMUDI"@en .
+<http://example.com/air_traffic_0000068> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         <http://example.com/air_traffic_0000084> <http://example.com/air_traffic_0000071> ,
+                                                                                  <http://example.com/air_traffic_0000085> ;
+                                         rdfs:label "BIVOR"@en .
+<http://example.com/air_traffic_0000069> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         <http://example.com/air_traffic_0000084> <http://example.com/air_traffic_0000071> ;
+                                         rdfs:label "AA124"@en .
+<http://example.com/air_traffic_0000070> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000018> ;
+                                         rdfs:label "ZBAA"@en .
+<http://example.com/air_traffic_0000071> rdf:type owl:NamedIndividual ;
+                                         <http://example.com/air_traffic_0000045> <http://example.com/air_traffic_0000068> ;
+                                         rdfs:label "AffectedArea1"@en .
+<http://example.com/air_traffic_0000072> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "Forcast1"@en .
+<http://example.com/air_traffic_0000073> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "Forcast2"@en .
+<http://example.com/air_traffic_0000074> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "20:30:00"@en .
+<http://example.com/air_traffic_0000075> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "20:40:00"@en .
+<http://example.com/air_traffic_0000076> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "19:15:00"@en .
+<http://example.com/air_traffic_0000077> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "19:38:20"@en .
+<http://example.com/air_traffic_0000078> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "19:41:08"@en .
+<http://example.com/air_traffic_0000079> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "19:46:24"@en .
+<http://example.com/air_traffic_0000080> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "19:59:28"@en .
+<http://example.com/air_traffic_0000081> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         <http://example.com/air_traffic_0000044> <http://example.com/air_traffic_0000074> ;
+                                         rdfs:label "20:34:36"@en .
+<http://example.com/air_traffic_0000082> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "21:00:00"@en .
+<http://example.com/air_traffic_0000083> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000002> ;
+                                         rdfs:label "21:14:00"@en .
+<http://example.com/air_traffic_0000085> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "AffectedArea2"@en .
+<http://example.com/air_traffic_0000086> rdf:type owl:NamedIndividual ,
+                                                  <http://example.com/air_traffic_0000003> ;
+                                         <http://example.com/air_traffic_0000040> <http://example.com/air_traffic_0000074> ,
+                                                                                  <http://example.com/air_traffic_0000075> ;
+                                         <http://example.com/air_traffic_0000042> <http://example.com/air_traffic_0000072> ,
+                                                                                  <http://example.com/air_traffic_0000073> ;
+                                         <http://example.com/air_traffic_0000043> <http://example.com/air_traffic_0000071> ,
+                                                                                  <http://example.com/air_traffic_0000085> ;
+                                         rdfs:label "Thunderstorm1"@en .
+
+
+
+#    Rules<tr1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<re1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<pd1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<t1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<th2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<fc2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<t2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<aa> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "S1"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://example.com/air_traffic_0000026> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <tr1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000038> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <tr1> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <re1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000039> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <re1> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <pd1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000040> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <pd1> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <t1>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000041> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <pd1> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <r>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> <http://example.com/air_traffic_0000003> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <th2>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000042> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <th2> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <fc2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000040> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <th2> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <t2>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000043> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <th2> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <aa>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000044> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <t1> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <t2>
+                                                                                                                                                        ] ;
+                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000045> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <aa> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument2> <r>
+                                                                                                                                                                   ] ;
+                                                                                                                                                         rdf:rest rdf:nil
+                                                                                                                                                       ]
+                                                                                                                                            ]
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://example.com/air_traffic_0000046> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <tr1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <th2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
